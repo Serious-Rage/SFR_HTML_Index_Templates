@@ -26,27 +26,27 @@
  
  
  
- <select id="SFR_debugger" inChange="SFR_TESTS(this.value)">
-    <option value=0; selected >0</option>
-    <option value=1; selected >1</option>
+ <select id="SFR_debugger" onChange="SFR_TESTS(this.value)">
+    <option value=(0); selected >Debug Off</option>
+    <option value=(1); >Debug On</option>
  </select>   
     
 <script>
-var SFR_TESTS = function(run_debug) {      // main switch to run tests for loading and support
-if !(run_debug === 1) { (run_debug = 0;
+  function SFR_TESTS(run_debug) {      // main switch to run tests for loading and support
+if !(run_debug === (1)) { (run_debug = (0);
 return run_debug }
 
-if (run_debug === 1) {(function () {
+if (run_debug === (1)) {(function () {
                                           //schaffold variables for debug methods     
-  var SFRdebuger = 1,                     //redundant inner kill switch 0 stops testing
-      JQtestLoaded = 1,                   // switch on jquery loaded test
-      webComponents = 1,                  // switch on web components support testing
+  var SFRdebuger = (1),                     //redundant inner kill switch 0 stops testing
+      JQtestLoaded = (1),                   // switch on jquery loaded test
+      webComponents = (1),                  // switch on web components support testing
       runMyDebug = (function (global,$,a,b,c) {
 
 //runs if SFRdebuger set to 1  
-if ( a == 1) {   
+if ( a === (1)) {   
         //runs if SFRdebuger set to 1  
-        if (b == 1) {
+        if (b === (1)) {
                 if (typeof jQuery != "undefined") 
                 { alert('jQuery is installed!'); }
                 else 
@@ -54,7 +54,7 @@ if ( a == 1) {
          }    
     }
 
-    if (c == 1) { 
+    if (c === (1)) { 
     function supportsImports() {
     return 'import' in document.createElement('link');
 }
